@@ -1,10 +1,14 @@
 set -x
 
-sudo apt update
-sudo apt dist-upgrade
+echo "run these by hand they hang for a user prompt"
+echo "sudo apt update"
+echo "sudo apt dist-upgrade"
+#sudo apt update
+#sudo apt dist-upgrade
+exit 0
 
 # disable swap
-sudo swapoff /swap.img
+sudo swapoff -a
 sudo sed -i '/ swap / s/^\(.*\)$/#\1/g' /etc/fstab
 
 # install basic deps
